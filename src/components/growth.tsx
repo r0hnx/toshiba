@@ -6,8 +6,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import axios from "axios";
 import { useQuery } from "react-query";
 
+const uri = process.env.URI || 'http://localhost:3000'
+
 const fetchData = async (interval: any) => {
-    const response = await axios.get(`http://localhost:3000/api/data`);
+    const response = await axios.get(uri + `/api/data`);
     return response.data;
 };
 
