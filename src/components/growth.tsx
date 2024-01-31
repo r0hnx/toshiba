@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import axios from "axios";
 import { useQuery } from "react-query";
 
-const uri = 'https://toshiba-backend.vercel.app/'
+const uri = 'https://toshiba-backend.vercel.app'
 
 const fetchData = async (interval: any) => {
     const response = await axios.get(uri + `/api/data`);
