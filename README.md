@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Toshiba Assignment
 
-## Getting Started
+## Project Overview
+In this project, we'll be building a complex web application with a frontend developed in React.js and a backend developed in Node.js. The frontend will display a line chart representing the relationship between profit percentage and time, while the backend will provide APIs for fetching and downsampling the data.
 
-First, run the development server:
+## Frontend Development
+
+### 1: Set Up the Frontend
+Open a terminal and run the following commands to create a new React app and navigate to its directory:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-react-app toshiba
+cd toshiba
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install the required packages:
+```bash
+npm install axios @nivo/core @nivo/line react-query
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2: Create Frontend Components
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### UI Component:
+Create a new folder components/ in the src directory.
+```bash
+.
+├── aside.tsx
+├── chats.tsx
+├── customers.tsx
+├── growth.tsx
+├── lostDeals.tsx
+├── newDeals.tsx
+├── quaterGoals.tsx
+├── revenues.tsx
+├── topStates.tsx
+└── ui
+    ├── avatar.tsx
+    ├── badge.tsx
+    ├── button.tsx
+    ├── card.tsx
+    ├── input.tsx
+    ├── progress.tsx
+    └── select.tsx
+```
+ui\ folder contains components from shadcn.ui
 
-## Learn More
+### 3. Backend Development
 
-To learn more about Next.js, take a look at the following resources:
+#### Step 1: Set Up the Backend
+Create a new directory named backend in the project root.
+Navigate to the backend directory and initialize a new Node.js project:
+```bash
+cd toshiba-backend
+npm init -y
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Install the required packages:
+```bash
+npm install express csv-parser
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Step 2: Create Backend Server and APIs
 
-## Deploy on Vercel
+**Server.js**:
+Create a new file index.js in the backend directory.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Run the Application
+In the terminal, navigate to the root directory of your project.
+Start the backend server:
+```bash
+cd tohsiba-backend
+node server.js
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Open a new terminal window and start the frontend app:
+```bash
+cd toshiba
+npm start
+```
+
+## Downscaling Algorithm
+The downsampling algorithm used in this project is a simple method that helps reduce the size of a large dataset while keeping important trends intact :
+
+- Grouping by Time: The algorithm groups data into time intervals, like years or months.
+- Keeping the Highest Value: Within each interval, the algorithm selects the data point with the highest profit percentage.
+- Reducing Data Size: By keeping only the highest value in each interval, the algorithm makes the dataset smaller while still showing the most significant trends.
+
+Open your web browser and go to http://localhost:3000 to see the application in action.
+
+### 5. Conclusion
+You have now successfully developed a dashboard web application with a dynamic line chart and a backend server serving the required data. This guide provides a high-level overview of the steps involved in creating the project.
+
+Feel free to explore and enhance the application further based on your needs. If you have any questions or encounter issues, refer to the detailed steps in each section or seek assistance from the developer community.
