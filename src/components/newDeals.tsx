@@ -10,13 +10,13 @@ const NewDeals = () => {
             <CardContent>
                      <div className="flex flex-wrap gap-2">
            <Badge>Fruit2Go</Badge>
-           <Badge>Marshall's MKT</Badge>
+           <Badge>Marshall&apos;s MKT</Badge>
            <Badge>CCNT</Badge>
            <Badge>Joana Mini-market</Badge>
            <Badge>Little Brazil Vegan</Badge>
            <Badge>Target</Badge>
            <Badge>Organic Place</Badge>
-           <Badge>Morello's</Badge>
+           <Badge>Morello&apos;s</Badge>
          </div>
             </CardContent>
           </Card>

@@ -1,4 +1,4 @@
-import { Link } from "lucide-react";
+import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "./ui/card";
 
 const LostDeals = () => {
@@ -12,9 +12,9 @@ const LostDeals = () => {
                 <CardDescription>You closed 96 out of 100 deals</CardDescription>
             </CardContent>
             <CardFooter className="flex justify-between">
-                <a className="text-indigo-600 hover:text-indigo-500" href="#">
+                <Link className="text-indigo-600 hover:text-indigo-500" href="#">
                     All deals →
-                </a>
+                </Link>
             </CardFooter>
         </Card>
     );

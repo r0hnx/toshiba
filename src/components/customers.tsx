@@ -1,27 +1,26 @@
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 import Link from "next/link"
-import { ResponsiveLine } from "@nivo/line"
-import { ClassAttributes, HTMLAttributes, JSX, SVGProps } from "react"
+import { JSX, SVGProps } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 const Customers = () => {
     return (
-        <Card className="col-span-3">
+        <Card className="col-span-3 flex flex-col justify-between">
             <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle>
                     Customers
                 </CardTitle>
                 <div className="w-32">
-                <Select>
-                    <SelectTrigger id="sort">
-                        <SelectValue placeholder="Newest" />
-                    </SelectTrigger>
-                    <SelectContent position="popper">
-                        <SelectItem value="newest">Newest</SelectItem>
-                        <SelectItem value="oldest">Oldest</SelectItem>
-                    </SelectContent>
-                </Select>
+                    <Select>
+                        <SelectTrigger id="sort">
+                            <SelectValue placeholder="Newest" />
+                        </SelectTrigger>
+                        <SelectContent position="popper">
+                            <SelectItem value="newest">Newest</SelectItem>
+                            <SelectItem value="oldest">Oldest</SelectItem>
+                        </SelectContent>
+                    </Select>
                 </div>
             </CardHeader>
             <CardContent>

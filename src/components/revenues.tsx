@@ -1,5 +1,6 @@
-import { TrendingUpIcon, Link } from "lucide-react";
+import { TrendingUpIcon } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "./ui/card";
+import Link from "next/link";
 
 const Revenues = () => {
     return (
@@ -12,9 +13,9 @@ const Revenues = () => {
                 <CardDescription>Increase compared to last week</CardDescription>
             </CardContent>
             <CardFooter className="flex justify-between">
-                <a className="text-indigo-600 hover:text-indigo-500" href="#">
+                <Link className="text-indigo-600 hover:text-indigo-500" href="#">
                     Revenues report →
-                </a>
+                </Link>
             </CardFooter>
         </Card>
     );
