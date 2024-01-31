@@ -5,7 +5,7 @@ import csv from 'csv-parser'
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
         // Read CSV file and convert to JSON
-        const rawData = await readCSVFile('data/dataset.csv');
+        const rawData = await readCSVFile('../data/dataset.csv');
 
         // Max Value Downsample the data
         const downsampledData = maxDownsample(rawData, 100); // Adjust threshold as needed
