@@ -1,11 +1,15 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { createReadStream } from 'fs'
+import path from 'path';
 import csv from 'csv-parser'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
+        const csvFileName = 'dataset.csv'; // Replace with the actual name of your CSV file
+        const csvFilePath = path.join(process.cwd(), 'data', csvFileName);
+    
         // Read CSV file and convert to JSON
-        const rawData = await readCSVFile('./data/dataset.csv');
+        const rawData = await readCSVFile(csvFilePath);
 
         // Max Value Downsample the data
         const downsampledData = maxDownsample(rawData, 100); // Adjust threshold as needed
